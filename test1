@@ -14,7 +14,7 @@ x3= (x(:,:,3)/255);
     N=(860/n)
 figure(1);imshow(Y);
  imwrite(Y,"mono.jpg");
- im_chresolution("mono.jpg",N,2);
+ im_chresolution("mono.jpg",N,1);
  Y=imread("resposta2.bmp");
  figure(2);imshow(Y);
 pause();
