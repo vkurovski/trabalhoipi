@@ -1,0 +1,20 @@
+    h=input("imagem:",'s')
+x=imread(h);
+
+[n,m,p]=size ( x);
+x=double(x);
+x1= (x(:,:,1)/255);
+x2= (x(:,:,2)/255);
+x3= (x(:,:,3)/255);
+    Y=(0.299*x1)+(0.587*x2)+(0.114*x3);
+    U=(-0.147*x1)+(-0.289*x2)+(0.436*x3);
+    V=(0.615*x1)+(-0.515*x2)+(-0.100*x3);
+    Y=uint8((round(Y*255)));
+figure(1);imshow(Y);
+ imwrite(Y,"mono.jpg");
+ im_chresolution("mono.jpg",10,2);
+ Y=imread("resposta2.bmp");
+ figure(2);imshow(Y);
+pause();
+d=imbinarize(Y);
+figure(3);imshow(d);
