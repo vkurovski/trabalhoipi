@@ -1,7 +1,8 @@
-    h=input("imagem:",'s')
+%esse arquivo so pega uma imagem RGB e tranforma ela em binario com um tamanho grande, ja que a maioria das iamgens que eu achei geralemnte sao pequenas 
+h=input("imagem:",'s')
 x=imread(h);
 
-[n,m,p]=size ( x);
+[n,m,p]=size (x);
 x=double(x);
 x1= (x(:,:,1)/255);
 x2= (x(:,:,2)/255);
@@ -10,9 +11,10 @@ x3= (x(:,:,3)/255);
     U=(-0.147*x1)+(-0.289*x2)+(0.436*x3);
     V=(0.615*x1)+(-0.515*x2)+(-0.100*x3);
     Y=uint8((round(Y*255)));
+    N=(860/n)
 figure(1);imshow(Y);
  imwrite(Y,"mono.jpg");
- im_chresolution("mono.jpg",10,2);
+ im_chresolution("mono.jpg",N,2);
  Y=imread("resposta2.bmp");
  figure(2);imshow(Y);
 pause();
